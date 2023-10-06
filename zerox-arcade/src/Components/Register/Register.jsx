@@ -1,10 +1,21 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
-  const { registerUser } = useContext(AuthContext);
+  const { registerUser, googleSignIn } = useContext(AuthContext);
   const naviGate = useNavigate();
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        console.log(result.user);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
   const handleRegister = e => {
     e.preventDefault();
@@ -115,6 +126,12 @@ const Register = () => {
                   Login
                 </Link>
               </p>
+              <button
+                onClick={handleGoogleSignIn}
+                className="text-3xl mx-auto text-center"
+              >
+                <FcGoogle></FcGoogle>
+              </button>
             </form>
           </div>
         </div>

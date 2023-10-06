@@ -1,10 +1,21 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, googleSignIn } = useContext(AuthContext);
   const naviGate = useNavigate();
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        console.log(result.user);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
   const handleLogin = e => {
     e.preventDefault();
@@ -75,6 +86,12 @@ const Login = () => {
                   Register
                 </Link>
               </p>
+              <button
+                onClick={handleGoogleSignIn}
+                className="text-3xl mx-auto text-center"
+              >
+                <FcGoogle></FcGoogle>
+              </button>
             </form>
           </div>
         </div>
