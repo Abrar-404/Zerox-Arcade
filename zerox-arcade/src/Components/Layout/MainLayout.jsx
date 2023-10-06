@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import backImg from '../../assets/background.jpg';
-import Banner from '../Banner/Banner';
 
 const MainLayout = () => {
   const bodyStyle = {
@@ -15,7 +14,6 @@ const MainLayout = () => {
     <div className="max-w-[425px] md:max-w-[768px] space-y-10 lg:max-w-[1400px] mx-auto">
       <div style={bodyStyle}>
         <Navbar></Navbar>
-        <Banner></Banner>
         <Outlet></Outlet>
       </div>
     </div>

@@ -27,7 +27,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Register!</h1>
@@ -109,7 +109,7 @@ const Register = () => {
               </div>
               <p>
                 Already Have An Account? Please{' '}
-                <Link className="font-semibold text-blue-700" to="/login">
+                <Link className="font-bold text-blue-700" to="/login">
                   Login
                 </Link>
               </p>

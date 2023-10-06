@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -69,7 +69,7 @@ const Login = () => {
               </div>
               <p>
                 New to this World? Please{' '}
-                <Link className="text-blue-700 font-semibold" to="/register">
+                <Link className="text-blue-700 font-bold" to="/register">
                   Register
                 </Link>
               </p>

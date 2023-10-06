@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 /* eslint-disable react/prop-types */
 const Cards = ({ card }) => {
-  const { event_name } = card || {};
+  const { event_name, id } = card || {};
 
   return (
     <div>
@@ -16,7 +18,9 @@ const Cards = ({ card }) => {
           <h2 className="card-title text-red-700">{event_name}</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="btn btn-primary">
+              <Link to={`/cardsDetails/${id}`}>See Details</Link>
+            </button>
           </div>
         </div>
       </div>

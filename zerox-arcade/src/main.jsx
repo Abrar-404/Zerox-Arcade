@@ -10,6 +10,8 @@ import Register from './Components/Register/Register';
 import Tournaments from './Components/Tournaments/Tournaments';
 import Cards from './Components/Cards/Cards';
 import AuthProvider from './Providers/AuthProvider';
+import CardDetails from './Components/CardDetails/CardDetails';
+import Footer from './Components/Footer/Footer';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('data.json'),
+        loader: () => fetch('/data.json'),
       },
       {
         path: '/navbar',
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: '/cards',
         element: <Cards></Cards>,
+      },
+      {
+        path: '/footer',
+        element: <Footer></Footer>,
+      },
+      {
+        path: '/cardsDetails/:id',
+        element: <CardDetails></CardDetails>,
       },
     ],
   },
