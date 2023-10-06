@@ -12,6 +12,7 @@ import Cards from './Components/Cards/Cards';
 import AuthProvider from './Providers/AuthProvider';
 import CardDetails from './Components/CardDetails/CardDetails';
 import Footer from './Components/Footer/Footer';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/cardsDetails/:id',
-        element: <CardDetails></CardDetails>,
+        element: (
+          <PrivateRoute>
+            <CardDetails></CardDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },
