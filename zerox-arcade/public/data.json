@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "image": "https://example.com/game-event1.jpg",
+    "event_name": "Summer Gaming Expo",
+    "price": "$25.99",
+    "short_description": "Join us for the biggest gaming expo of the summer! Explore the latest games and hardware."
+  },
+  {
+    "id": 2,
+    "image": "https://example.com/game-event2.jpg",
+    "event_name": "E-Sports Championship",
+    "price": "$10.99",
+    "short_description": "Compete against the best in this year's E-Sports Championship and win cash prizes."
+  },
+  {
+    "id": 3,
+    "image": "https://example.com/game-event3.jpg",
+    "event_name": "Virtual Reality Showcase",
+    "price": "Free",
+    "short_description": "Experience the future of gaming with our Virtual Reality Showcase. Try out VR games and demos."
+  },
+  {
+    "id": 4,
+    "image": "https://example.com/game-event4.jpg",
+    "event_name": "Retro Game Fest",
+    "price": "$12.50",
+    "short_description": "Step back in time and relive the nostalgia with classic retro games at Retro Game Fest."
+  },
+  {
+    "id": 5,
+    "image": "https://example.com/game-event5.jpg",
+    "event_name": "Gamer's Night Out",
+    "price": "$15.99",
+    "short_description": "Join fellow gamers for a night of fun, competitions, and game-themed cocktails."
+  },
+  {
+    "id": 6,
+    "image": "https://example.com/game-event6.jpg",
+    "event_name": "Game Developer Conference",
+    "price": "$199.99",
+    "short_description": "Learn from the industry's top professionals at the Game Developer Conference."
+  }
+]
