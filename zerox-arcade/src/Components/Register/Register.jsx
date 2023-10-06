@@ -1,10 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const { registerUser, googleSignIn } = useContext(AuthContext);
+  const [errorRegi, setErrorRegi] = useState('');
+  const [sweetAlertShow, SetSweetAlertShow] = useState(false);
   const naviGate = useNavigate();
 
   const handleGoogleSignIn = () => {
@@ -14,8 +17,23 @@ const Register = () => {
       })
       .catch(error => {
         console.error(error);
+        setErrorRegi(error.message);
+        SetSweetAlertShow(true);
       });
   };
+
+  useEffect(() => {
+    if (errorRegi) {
+      Swal.fire({
+        title: `${errorRegi}`,
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `rgba(0,0,123,0.4) url("/images/nyan-cat.gif") left top no-repeat`,
+      });
+    }
+  }, [errorRegi]);
 
   const handleRegister = e => {
     e.preventDefault();
@@ -35,6 +53,8 @@ const Register = () => {
       })
       .catch(error => {
         console.error(error);
+        setErrorRegi(error.message);
+        SetSweetAlertShow(true);
       });
   };
 
