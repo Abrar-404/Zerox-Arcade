@@ -16,6 +16,7 @@ import Profile from './Components/Profile/Profile';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ErrorElement from './ErrorElement/ErrorElement';
 import Hackathons from './Components/Tournaments/Tournaments';
+import CardLoader from './Components/CardDetails/CardLoader';
 
 const router = createBrowserRouter([
   {
@@ -76,9 +77,10 @@ const router = createBrowserRouter([
         path: '/cardsDetails/:id',
         element: (
           <PrivateRoute>
-            <CardDetails></CardDetails>
+            <CardLoader></CardLoader>
           </PrivateRoute>
         ),
+        loader: () => fetch('/data.json'),
       },
     ],
   },

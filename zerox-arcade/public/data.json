@@ -4,47 +4,53 @@
     "image": "https://i.ibb.co/rm17pXN/img1.jpg",
     "event_name": "Gaming Expo",
     "price": "$25.99",
+    "badge": "Gaming Experience",
     "short_description": "Join us for the biggest gaming expo of the summer! Explore the latest games and hardware.",
-    "description": "A gaming expo is an electrifying event that brings together gamers, developers, and enthusiasts from around the world. It showcases the latest video games, cutting-edge technology, and offers a platform for networking and experiencing the excitement of the gaming industry firsthand. From immersive demos to esports tournaments, it's a playground for all things gaming."
+    "description": "A Gaming Expo is a thrilling showcase of the gaming industry's cutting-edge technology, immersive experiences, and the chance for gamers to connect with their passion on a whole new level. It's where the virtual world becomes a vibrant reality."
   },
   {
     "id": 2,
     "image": "https://i.ibb.co/Yc6qg1h/slider-img-2.png",
     "event_name": "E-Sports Championship",
     "price": "$10.99",
+    "badge": "Be The Champions",
     "short_description": "Compete against the best in this year's E-Sports Championship and win cash prizes.",
-    "description": "An E-Sports Championship is a high-stakes competitive gaming tournament where top esports athletes from around the world compete in various video game titles. These events showcase exceptional skill, teamwork, and strategy, drawing massive audiences and offering substantial cash prizes to the victors. E-Sports Championships have become a global phenomenon, shaping the future of professional gaming."
+    "description": "An E-Sports Championship is a high-stakes competition where elite gamers from around the world come together to battle it out in virtual arenas, showcasing their incredible skills and competing for prestigious titles and substantial prizes."
   },
   {
     "id": 3,
     "image": "https://i.ibb.co/7nGKPL6/slider-img-3.png",
     "event_name": "Virtual Reality Showcase",
-    "price": "Free",
+    "badge": "Showcase",
+    "price": "$28.00",
     "short_description": "Experience the future of gaming with our Virtual Reality Showcase. Try out VR games and demos.",
-    "description": "A Virtual Reality Showcase is a captivating and immersive experience that transports participants into a digital realm, allowing them to explore alternate realities, interact with virtual environments, and discover the cutting-edge possibilities of VR technology. It offers a unique opportunity to witness the future of entertainment, education, and enterprise in a dynamic and interactive way, making it a must-see event for tech enthusiasts and curious minds alike.."
+    "description": "A Virtual Reality Showcase is an immersive experience that transports participants to digital realms, offering a glimpse into the limitless possibilities of VR technology, from gaming to education and beyond. Step into the future and explore virtual worlds like never before."
   },
   {
     "id": 4,
     "image": "https://i.ibb.co/X5ZkmPd/istockphoto-1125107251-612x612.jpg",
     "event_name": "Hackathon Fest",
+    "badge": "FestFull",
     "price": "$12.50",
     "short_description": "A hackathon is an intense, collaborative event where creative minds come together to solve real-world problems through innovation and technology.",
-    "description": "A gaming expo is an electrifying event that brings together gamers, developers, and enthusiasts from around the world. It showcases the latest video games, cutting-edge technology, and offers a platform for networking and experiencing the excitement of the gaming industry firsthand. From immersive demos to esports tournaments, it's a playground for all things gaming."
+    "description": "Hackathon Fest is an electrifying convergence of creative minds, where teams compete in a high-octane coding marathon to devise innovative solutions and disrupt the tech landscape. Join us for an adrenaline-fueled journey into the future of technology!"
   },
   {
     "id": 5,
     "image": "https://i.ibb.co/TP8jR5x/Ska-rmavbild-2021-03-10-kl-09-01-37.png",
     "event_name": "Tech Conference",
+    "badge": "Gather Knowledge",
     "price": "$15.99",
-    "short_description": "A tech conference is a gathering of industry experts and enthusiasts where the latest innovations and trends in technology are explored and discussed.",
-    "description": "A gaming expo is an electrifying event that brings together gamers, developers, and enthusiasts from around the world. It showcases the latest video games, cutting-edge technology, and offers a platform for networking and experiencing the excitement of the gaming industry firsthand. From immersive demos to esports tournaments, it's a playground for all things gaming."
+    "short_description": "Tech conferences bring together visionaries, experts, and enthusiasts to ignite creativity and explore the forefront of technological evolution. connections are forged, and the future is shaped.",
+    "description": "A Tech Conference is a dynamic forum where technology enthusiasts, professionals, and experts converge to exchange ideas, explore emerging trends, and advance the frontiers of innovation in the digital world. It's a hub of knowledge sharing and networking that fuels the tech industry's evolution.."
   },
   {
     "id": 6,
     "image": "https://i.ibb.co/vvrPN29/Screen-Shot-2018-11-28-at-18-44-51-1024x681.jpg",
     "event_name": "Tech Developer Conference",
+    "badge": "Learn About Tech",
     "price": "$199.99",
     "short_description": "Unlocking the Future: Where Innovation Meets Inspiration at Tech Conferences!",
-    "description": "A gaming expo is an electrifying event that brings together gamers, developers, and enthusiasts from around the world. It showcases the latest video games, cutting-edge technology, and offers a platform for networking and experiencing the excitement of the gaming industry firsthand. From immersive demos to esports tournaments, it's a playground for all things gaming."
+    "description": "The Tech Developer Conference is a premier event where software engineers, programmers, and developers converge to share knowledge, explore cutting-edge technologies, and collaborate on building the digital future."
   }
 ]

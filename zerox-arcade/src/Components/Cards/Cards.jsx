@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 
 /* eslint-disable react/prop-types */
 const Cards = ({ allCard }) => {
-  const { event_name, id, image, short_description } = allCard || {};
+  const { event_name, id, image, short_description, price } = allCard || {};
 
   return (
     <div>
@@ -21,6 +21,7 @@ const Cards = ({ allCard }) => {
               {event_name}
             </h2>
           </div>
+          <p className="text-white text-xs">Enroll Now: {price}</p>
           <p className="text-white text-xs mt-4">{short_description}</p>
           <div className="card-actions">
             <Button className="py-2 border border-blue-500 px-2 rounded-lg hover:bg">
