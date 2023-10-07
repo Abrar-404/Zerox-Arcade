@@ -20,28 +20,28 @@ const Navbar = () => {
 
   const navs = (
     <>
-      <li>
+      <li className="text-white">
         <NavLink to="/">Home</NavLink>
       </li>
       {user ? null : (
         <>
-          <li>
+          <li className="text-white">
             <NavLink to="/login">Login</NavLink>
           </li>
-          <li>
+          <li className="text-white">
             <NavLink to="/register">Register</NavLink>
           </li>
         </>
       )}
       {user && (
         <>
-          <li>
-            <NavLink to="/tournaments">Tournaments</NavLink>
+          <li className="text-white">
+            <NavLink to="/hackathons">Hackathons</NavLink>
           </li>
-          <li>
+          <li className="text-white">
             <NavLink to="/profile">Profile</NavLink>
           </li>
-          <li>
+          <li className="text-white">
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
         </>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-blue-300 bg-transparent shadow-lg">
+      <div className="navbar  bg-transparent shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -95,7 +95,7 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <button className="btn text-lg mb-2 btn-sm btn-ghost">
+                  <button className="btn text-base mb-2 btn-sm btn-ghost">
                     {user.displayName}
                   </button>
                 </li>

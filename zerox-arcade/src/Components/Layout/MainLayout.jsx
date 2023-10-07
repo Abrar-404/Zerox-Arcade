@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
-import backImg from '../../assets/background.jpg';
+import backImg from '../../assets/banner_image.png';
 
 const MainLayout = () => {
   const background = {

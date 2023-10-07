@@ -1,4 +1,4 @@
-const Tournaments = () => {
+const Hackathons = () => {
   return (
     <div>
       <h1>Tour here</h1>
@@ -6,4 +6,4 @@ const Tournaments = () => {
   );
 };
 
-export default Tournaments;
+export default Hackathons;

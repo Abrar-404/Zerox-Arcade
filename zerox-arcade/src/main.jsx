@@ -7,7 +7,6 @@ import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
-import Tournaments from './Components/Tournaments/Tournaments';
 import Cards from './Components/Cards/Cards';
 import AuthProvider from './Providers/AuthProvider';
 import CardDetails from './Components/CardDetails/CardDetails';
@@ -16,6 +15,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Profile from './Components/Profile/Profile';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ErrorElement from './ErrorElement/ErrorElement';
+import Hackathons from './Components/Tournaments/Tournaments';
 
 const router = createBrowserRouter([
   {
@@ -41,10 +41,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/tournaments',
+        path: '/hackathons',
         element: (
           <PrivateRoute>
-            <Tournaments></Tournaments>
+            <Hackathons></Hackathons>
           </PrivateRoute>
         ),
       },
