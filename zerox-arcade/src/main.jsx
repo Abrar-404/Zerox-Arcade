@@ -13,6 +13,8 @@ import AuthProvider from './Providers/AuthProvider';
 import CardDetails from './Components/CardDetails/CardDetails';
 import Footer from './Components/Footer/Footer';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Profile from './Components/Profile/Profile';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +40,27 @@ const router = createBrowserRouter([
       },
       {
         path: '/tournaments',
-        element: <Tournaments></Tournaments>,
+        element: (
+          <PrivateRoute>
+            <Tournaments></Tournaments>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/profile',
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/dashboard',
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/cards',

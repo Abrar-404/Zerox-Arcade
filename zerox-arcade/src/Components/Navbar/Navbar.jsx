@@ -27,9 +27,19 @@ const Navbar = () => {
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
-      <li>
-        <NavLink to="/tournaments">Tournaments</NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/tournaments">Tournaments</NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -61,7 +71,7 @@ const Navbar = () => {
               {navs}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">{img}</a>
+          <img className="max-w-[150px] max-h-[80px]" src={img} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navs}</ul>

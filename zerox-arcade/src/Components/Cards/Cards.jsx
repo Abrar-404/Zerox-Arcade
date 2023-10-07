@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
 /* eslint-disable react/prop-types */
-const Cards = ({ card }) => {
-  const { event_name, id } = card || {};
+const Cards = ({ allCard }) => {
+  const { event_name, id } = allCard || {};
 
   return (
     <div>
