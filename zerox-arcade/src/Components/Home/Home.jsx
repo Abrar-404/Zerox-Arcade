@@ -2,6 +2,7 @@ import Cards from '../Cards/Cards';
 import { useLoaderData } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Footer from '../Footer/Footer';
+import Hero from './../Hero/Hero';
 
 const Home = () => {
   const card = useLoaderData();
@@ -9,6 +10,7 @@ const Home = () => {
   console.log(card);
   return (
     <>
+      <Hero></Hero>
       <Banner></Banner>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 grid-cols-1">
         {card?.map(allCard => (

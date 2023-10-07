@@ -1,14 +1,17 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import { GiEnergyArrow } from 'react-icons/gi';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import Button from '../Button/Button';
 
 const Register = () => {
   const { registerUser, googleSignIn } = useContext(AuthContext);
   const [errorRegi, setErrorRegi] = useState('');
   const [sweetAlertShow, SetSweetAlertShow] = useState(false);
   const [errorProb, setErrorProb] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const naviGate = useNavigate();
 
   const handleGoogleSignIn = () => {
@@ -86,6 +89,8 @@ const Register = () => {
     //     });
     // }
 
+    setErrorMessage('');
+
     registerUser(email, password)
       .then(result => {
         naviGate('/login');
@@ -94,6 +99,7 @@ const Register = () => {
       .catch(error => {
         console.error(error);
         setErrorRegi(error.message);
+        setErrorMessage(error.message);
         SetSweetAlertShow(true);
       });
   };
@@ -180,18 +186,30 @@ const Register = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>
               </div>
-              <p>
-                Already Have An Account? Please{' '}
-                <Link className="font-bold text-blue-700" to="/login">
-                  Login
-                </Link>
-              </p>
-              <button
+              {errorMessage && (
+                <p>
+                  Already Have An Account? Please{' '}
+                  <Link className="font-bold text-blue-700" to="/login">
+                    Login
+                  </Link>
+                </p>
+              )}
+              <div
+                className="w-full justify-center items-center flex mx-auto"
                 onClick={handleGoogleSignIn}
-                className="text-3xl mx-auto text-center"
               >
-                <FcGoogle></FcGoogle>
-              </button>
+                <div className="text-3xl -rotate-45 w-9 text-red-600">
+                  <GiEnergyArrow></GiEnergyArrow>
+                </div>
+                <Button>
+                  <button className="text-3xl w-full text-center flex mx-auto">
+                    <FcGoogle></FcGoogle>
+                  </button>
+                </Button>
+                <div className="text-3xl w-9 -rotate-[225deg] text-red-600">
+                  <GiEnergyArrow></GiEnergyArrow>
+                </div>
+              </div>
               <p>{errorProb}</p>
             </form>
           </div>

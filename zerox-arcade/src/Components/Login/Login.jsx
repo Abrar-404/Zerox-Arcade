@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
+import { GiEnergyArrow } from 'react-icons/gi';
+import Button from '../Button/Button';
 
 const Login = () => {
   const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -87,12 +89,22 @@ const Login = () => {
                   Register
                 </Link>
               </p>
-              <button
+              <div
+                className="w-full justify-center items-center flex mx-auto"
                 onClick={handleGoogleSignIn}
-                className="text-3xl mx-auto text-center"
               >
-                <FcGoogle></FcGoogle>
-              </button>
+                <div className="text-3xl -rotate-45 w-9 text-red-600">
+                  <GiEnergyArrow></GiEnergyArrow>
+                </div>
+                <Button>
+                  <button className="text-3xl w-full text-center flex mx-auto">
+                    <FcGoogle></FcGoogle>
+                  </button>
+                </Button>
+                <div className="text-3xl w-9 -rotate-[225deg] text-red-600">
+                  <GiEnergyArrow></GiEnergyArrow>
+                </div>
+              </div>
             </form>
           </div>
         </div>
