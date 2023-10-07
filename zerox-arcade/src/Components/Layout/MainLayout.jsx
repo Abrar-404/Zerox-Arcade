@@ -3,16 +3,16 @@ import Navbar from '../Navbar/Navbar';
 import backImg from '../../assets/background.jpg';
 
 const MainLayout = () => {
-  const bodyStyle = {
+  const background = {
     backgroundImage: `url(${backImg})`,
-    backgroundSize: 'cover', // Adjust as needed
-    backgroundRepeat: 'no-repeat', // Adjust as needed
-    backgroundAttachment: 'fixed', // Adjust as needed
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
   };
 
   return (
     <div className="max-w-[425px] md:max-w-[768px] space-y-10 lg:max-w-[1400px] mx-auto">
-      <div style={bodyStyle}>
+      <div style={background}>
         <Navbar></Navbar>
         <Outlet></Outlet>
       </div>

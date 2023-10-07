@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
   const { registerUser, googleSignIn } = useContext(AuthContext);
   const [errorRegi, setErrorRegi] = useState('');
+  const [successFull, setSuccessFull] = useState('');
   const [sweetAlertShow, SetSweetAlertShow] = useState(false);
   const naviGate = useNavigate();
 
@@ -50,6 +51,7 @@ const Register = () => {
       .then(result => {
         naviGate('/');
         console.log(result);
+        setSuccessFull('user created successfully');
       })
       .catch(error => {
         console.error(error);
@@ -152,6 +154,7 @@ const Register = () => {
               >
                 <FcGoogle></FcGoogle>
               </button>
+              {successFull && <p className="text-green-600">{successFull}</p>}
             </form>
           </div>
         </div>
