@@ -7,20 +7,31 @@ const CardDetails = ({ load }) => {
     <div>
       <div className="card h-[100vh] justify-center flex items-center bg-gray-900 bg-opacity-60 bg-transparent shadow-xl">
         <figure className="px-10 pt-10">
-          <div className="flex md:flex-col-reverse lg:flex-row flex-col-reverse gap-5">
+          <div className="flex  gap-5">
             <img
               src={image}
-              alt="Shoes"
-              className="rounded-xl w-[500px] h-[300px]"
+              className="rounded-xl lg:w-[500px] lg:h-[300px] md:w-[300px] md:h-[200px] w-[200px] h-[100px]"
             />
             <div className="">
               <p className="text-white text-base font-bold uppercase">
                 {event_name}
               </p>
-              <p className="text-white mt-6 max-w-sm">{description}</p>
+              <p className="text-white lg:mt-6 md:mt-4 mt-1 text-[7px] md:text-[10px] lg:text-base max-w-sm">
+                {description}
+              </p>
 
-              <div className="badge mt-4 badge-secondary">{event_name}</div>
-              <img className="w-[250px] mt-2 h-[100px]" src={join} alt="" />
+              <div className="flex md:flex-col lg:flex-col">
+                <div>
+                  <div className="badge lg:mt-4 md:mt-4 mt-2 text-[5px] md:text-base lg:text-lg badge-secondary">
+                    {event_name}
+                  </div>
+                </div>
+                <img
+                  className="lg:w-[200px] md:w[80px] md:h-[50px] w-[100px] h-[20px] text-start mt-2 lg:h-[100px]"
+                  src={join}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </figure>
