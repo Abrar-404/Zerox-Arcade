@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 /* eslint-disable react/prop-types */
 const Cards = ({ allCard }) => {
-  const { event_name, id, image } = allCard || {};
+  const { event_name, id, image, short_description } = allCard || {};
 
   return (
     <div>
-      <div className="card bg-blue-900 bg-opacity-60 bg-transparent shadow-xl">
+      <div className="card bg-gray-900 bg-opacity-60 bg-transparent shadow-xl">
         <figure className="px-10 pt-10">
           <img
             src={image}
@@ -14,13 +15,17 @@ const Cards = ({ allCard }) => {
             className="rounded-xl w-[500px] h-[300px]"
           />
         </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title text-red-700">{event_name}</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div className="card-body items-start text-left">
+          <div className="text-start">
+            <h2 className="card-title text-white mx-auto text-start">
+              {event_name}
+            </h2>
+          </div>
+          <p className="text-white text-xs mt-4">{short_description}</p>
           <div className="card-actions">
-            <button className="btn btn-primary">
+            <Button className="py-2 border border-blue-500 px-2 rounded-lg hover:bg">
               <Link to={`/cardsDetails/${id}`}>See Details</Link>
-            </button>
+            </Button>
           </div>
         </div>
       </div>
