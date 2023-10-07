@@ -1,14 +1,16 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import img from '../../assets/logo.svg';
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  const naviGate = useNavigate();
 
   const handleSignOut = () => {
     signOutUser()
       .then(result => {
+        naviGate('/');
         console.log(result.user);
       })
       .catch(error => {
@@ -21,12 +23,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
+      {user ? null : (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
       {user && (
         <>
           <li>

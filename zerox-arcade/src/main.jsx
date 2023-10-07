@@ -15,11 +15,13 @@ import Footer from './Components/Footer/Footer';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Profile from './Components/Profile/Profile';
 import Dashboard from './Components/Dashboard/Dashboard';
+import ErrorElement from './ErrorElement/ErrorElement';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: '/',

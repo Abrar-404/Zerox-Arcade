@@ -10,6 +10,7 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
+        naviGate('/');
         console.log(result.user);
       })
       .catch(error => {

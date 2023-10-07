@@ -7,13 +7,14 @@ import Swal from 'sweetalert2';
 const Register = () => {
   const { registerUser, googleSignIn } = useContext(AuthContext);
   const [errorRegi, setErrorRegi] = useState('');
-  const [successFull, setSuccessFull] = useState('');
   const [sweetAlertShow, SetSweetAlertShow] = useState(false);
+  const [errorProb, setErrorProb] = useState('');
   const naviGate = useNavigate();
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
+        naviGate('/login');
         console.log(result.user);
       })
       .catch(error => {
@@ -36,9 +37,21 @@ const Register = () => {
     }
   }, [errorRegi]);
 
+  useEffect(() => {
+    if (errorProb) {
+      Swal.fire({
+        title: `${errorProb}`,
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `rgba(0,0,123,0.4) url("/images/nyan-cat.gif") left top no-repeat`,
+      });
+    }
+  }, [errorProb]);
+
   const handleRegister = e => {
     e.preventDefault();
-
     const email = e.target.email.value;
     // const confirm_email = e.target.confirm_email.value;
     const password = e.target.password.value;
@@ -47,11 +60,36 @@ const Register = () => {
 
     console.log(email, name, password);
 
+    // if (password.length < 6) {
+    //   setErrorProb('nope');
+    //   return;
+    // }
+
+    // if (
+    //   password.length < 6 ||
+    //   /[A-Z]/.test(password) ||
+    //   /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)
+    // ) {
+    //   setErrorRegi('Password does not meet the criteria.');
+    //   SetSweetAlertShow(true);
+    //   return;
+    // } else {
+    //   registerUser(email, password)
+    //     .then(result => {
+    //       naviGate('/');
+    //       console.log(result);
+    //     })
+    //     .catch(error => {
+    //       console.error(error);
+    //       setErrorRegi(error.message);
+    //       SetSweetAlertShow(true);
+    //     });
+    // }
+
     registerUser(email, password)
       .then(result => {
-        naviGate('/');
+        naviGate('/login');
         console.log(result);
-        setSuccessFull('user created successfully');
       })
       .catch(error => {
         console.error(error);
@@ -154,7 +192,7 @@ const Register = () => {
               >
                 <FcGoogle></FcGoogle>
               </button>
-              {successFull && <p className="text-green-600">{successFull}</p>}
+              <p>{errorProb}</p>
             </form>
           </div>
         </div>
