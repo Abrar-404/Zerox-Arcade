@@ -20,14 +20,14 @@ const CardDetails = ({ load }) => {
                 {description}
               </p>
 
-              <div className="flex md:flex-col lg:flex-col">
+              <div className="flex-row md:flex-col lg:flex-col">
                 <div>
                   <div className="badge lg:mt-4 md:mt-4 mt-2 text-[5px] md:text-base lg:text-lg badge-secondary">
                     {event_name}
                   </div>
                 </div>
                 <img
-                  className="lg:w-[200px] md:w[80px] md:h-[50px] w-[100px] h-[20px] text-start mt-2 lg:h-[100px]"
+                  className="lg:w-[200px] md:w[80px] md:h-[50px] w-[100px] h-[20px]  mt-2 lg:h-[100px]"
                   src={join}
                   alt=""
                 />
