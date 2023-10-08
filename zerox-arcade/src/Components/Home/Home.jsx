@@ -12,6 +12,9 @@ const Home = () => {
     <>
       <Hero></Hero>
       <Banner></Banner>
+      <h1 className="mx-auto text-center text-4xl font-bold text-white mt-5">
+        Our Services
+      </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 grid-cols-1">
         {card?.map(allCard => (
           <Cards key={allCard.id} allCard={allCard}></Cards>

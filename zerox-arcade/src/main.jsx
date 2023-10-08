@@ -9,14 +9,13 @@ import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Cards from './Components/Cards/Cards';
 import AuthProvider from './Providers/AuthProvider';
-import CardDetails from './Components/CardDetails/CardDetails';
 import Footer from './Components/Footer/Footer';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Profile from './Components/Profile/Profile';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ErrorElement from './ErrorElement/ErrorElement';
-import Hackathons from './Components/Tournaments/Tournaments';
 import CardLoader from './Components/CardDetails/CardLoader';
+import Hackathons from './Components/Hackathon/Hackathons';
 
 const router = createBrowserRouter([
   {
