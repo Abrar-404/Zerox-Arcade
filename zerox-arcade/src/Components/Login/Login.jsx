@@ -1,19 +1,20 @@
-import { useContext } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { GiEnergyArrow } from 'react-icons/gi';
+import Swal from 'sweetalert2';
 import Button from '../Button/Button';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const { signInUser, googleSignIn } = useContext(AuthContext);
-  const naviGate = useNavigate();
-  const location = useLocation();
+  const [error, setError] = useState(null);
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
-        naviGate(location?.state ? location.state : '/');
         console.log(result.user);
       })
       .catch(error => {
@@ -23,6 +24,7 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault();
+    setError(null);
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -30,16 +32,42 @@ const Login = () => {
 
     signInUser(email, password)
       .then(result => {
-        naviGate(location?.state ? location.state : '/');
         console.log(result);
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+          title: 'WOOHOOO!!!! Welcome To The World!!!!',
+          width: 600,
+          padding: '3em',
+          color: '#7CFC00',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
       })
       .catch(error => {
         console.error(error);
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/ZLj6kP2/200w.gif`,
+          title: 'Email and Password did not match',
+          width: 600,
+          padding: '3em',
+          color: '#C70039 ',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
       });
   };
 
   return (
     <>
+      <ToastContainer />
       <div className="hero  min-h-screen">
         <div className="hero-content  flex-col lg:flex-row-reverse">
           <div className="text-center items-center lg:text-left">
@@ -51,6 +79,14 @@ const Login = () => {
             />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  bg-slate-700 bg-opacity-60">
+            {error && (
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                role="alert"
+              >
+                {error}
+              </div>
+            )}
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">

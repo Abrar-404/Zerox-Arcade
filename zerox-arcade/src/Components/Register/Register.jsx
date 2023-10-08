@@ -1,9 +1,11 @@
 import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
 import { GiEnergyArrow } from 'react-icons/gi';
 import { AuthContext } from '../../Providers/AuthProvider';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import Button from '../Button/Button';
 
 const Register = () => {
@@ -11,11 +13,9 @@ const Register = () => {
   const [errorRegi, setErrorRegi] = useState('');
   const [successRegi, setSuccessRegi] = useState('');
 
-
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
-        // naviGate('/');
         console.log(result.user);
       })
       .catch(error => {
@@ -35,24 +35,76 @@ const Register = () => {
     console.log(email, name, password);
 
     if (password.length < 6) {
-      setErrorRegi('Password should be at least 6 characters long.');
+      Swal.fire({
+        imageUrl: `https://i.ibb.co/hfQtDDz/piffle-error.gif`,
+        title: 'Password should be at least 6 characters long.',
+        width: 600,
+        padding: '3em',
+        color: '#C70039 ',
+        background:
+          '#fff url(https://i.ibb.co/nfmHX3X/depositphotos-182476906-stock-illustration-holographic-vector-backgrounds.webp)',
+        backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+      });
       return;
     }
 
     if (!/[A-Z]/.test(password)) {
-      setErrorRegi('Password should contain at least one uppercase character.');
+      Swal.fire({
+        imageUrl: `https://i.ibb.co/hfQtDDz/piffle-error.gif`,
+        title: 'Password should contain at least one uppercase character.',
+        width: 600,
+        padding: '3em',
+        color: '#C70039 ',
+        background:
+          '#fff url(https://i.ibb.co/nfmHX3X/depositphotos-182476906-stock-illustration-holographic-vector-backgrounds.webp)',
+        backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+      });
       return;
     }
 
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-      setErrorRegi('Password should contain at least one special character.');
+      Swal.fire({
+        imageUrl: `https://i.ibb.co/hfQtDDz/piffle-error.gif`,
+        title: 'Password should contain at least one special character.',
+        width: 600,
+        padding: '3em',
+        color: '#C70039 ',
+        background:
+          '#fff url(https://i.ibb.co/nfmHX3X/depositphotos-182476906-stock-illustration-holographic-vector-backgrounds.webp)',
+        backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+      });
       return;
     }
 
     registerUser(email, password)
       .then(result => {
         console.log(result);
-        setSuccessRegi('user created successfully');
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+          title: 'WOOHOOO!!!! Welcome To The World!!!!',
+          width: 600,
+          padding: '3em',
+          color: '#7CFC00',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
+        setSuccessRegi();
       })
       .catch(error => {
         console.error(error);
@@ -61,6 +113,7 @@ const Register = () => {
 
   return (
     <>
+      <ToastContainer />
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
