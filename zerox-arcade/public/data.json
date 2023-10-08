@@ -41,7 +41,7 @@
     "event_name": "Tech Conference",
     "badge": "Gather Knowledge",
     "price": "$15.99",
-    "short_description": "Tech conferences bring together visionaries, experts, and enthusiasts to ignite creativity and explore the forefront of technological evolution. connections are forged, and the future is shaped.",
+    "short_description": "Tech conferences bring together visionaries, experts, and enthusiasts to ignite creativity and explore the forefront of technological evolution.",
     "description": "A Tech Conference is a dynamic forum where technology enthusiasts, professionals, and experts converge to exchange ideas, explore emerging trends, and advance the frontiers of innovation in the digital world. It's a hub of knowledge sharing and networking that fuels the tech industry's evolution.."
   },
   {
@@ -50,7 +50,7 @@
     "event_name": "Tech Developer Conference",
     "badge": "Learn About Tech",
     "price": "$199.99",
-    "short_description": "Unlocking the Future: Where Innovation Meets Inspiration at Tech Conferences!",
+    "short_description": "Unlocking the Future: Where Innovation Meets Inspiration at Tech Conferences! Join to gather the future ahead knowledge with us",
     "description": "The Tech Developer Conference is a premier event where software engineers, programmers, and developers converge to share knowledge, explore cutting-edge technologies, and collaborate on building the digital future."
   }
 ]
