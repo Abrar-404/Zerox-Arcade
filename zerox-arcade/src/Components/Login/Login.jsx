@@ -15,6 +15,19 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+          title: 'WOOHOOO!!!! Welcome To The World!!!!',
+          width: 600,
+          padding: '3em',
+          color: '#7CFC00',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
         console.log(result.user);
       })
       .catch(error => {
