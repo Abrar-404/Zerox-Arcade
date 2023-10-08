@@ -41,19 +41,19 @@ const Login = () => {
     <>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+          <div className="text-center items-center lg:text-left">
+            <h1 className="text-5xl w-full text-white font-bold">Login now!</h1>
+            <img
+              className="w-[200px] h-[180px] mt-10 rounded-full"
+              src="https://i.ibb.co/279NXhY/daniel-tolmachov-bluefire02.gif"
+              alt=""
+            />
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent bg-slate-700 bg-opacity-60">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-white font-bold">Email</span>
                 </label>
                 <input
                   type="email"
@@ -65,7 +65,9 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-white font-bold">
+                    Password
+                  </span>
                 </label>
                 <input
                   type="password"
@@ -75,7 +77,13 @@ const Login = () => {
                   name="password"
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <span className="label-text text-white font-bold">
+                    Password
+                  </span>
+                  <a
+                    href="#"
+                    className="label-text-alt link text-white font-bold link-hover"
+                  >
                     Forgot password?
                   </a>
                 </label>
@@ -83,7 +91,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
-              <p>
+              <p className="text-white font-medium">
                 New to this World? Please{' '}
                 <Link className="text-blue-700 font-bold" to="/register">
                   Register
