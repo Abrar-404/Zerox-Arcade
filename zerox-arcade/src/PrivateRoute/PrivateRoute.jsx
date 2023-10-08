@@ -8,7 +8,12 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <span className="loading mx-auto loading-infinity loading-lg"></span>
+      <div className="h-[100vh]">
+        <img
+          className="text-center mt-40 mx-auto flex justify-center"
+          src="https://i.ibb.co/Vxf5BTC/loader.gif"
+        ></img>
+      </div>
     );
   }
 

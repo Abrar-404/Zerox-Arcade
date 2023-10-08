@@ -2,7 +2,7 @@ import AOS from 'aos';
 
 const Hero = () => {
   return (
-    <div className="">
+    <div className="overflow-hidden mx-auto">
       {/* 1 */}
 
       <div data-aos="fade-up-right" className="hero mt-5 bg-transparent">

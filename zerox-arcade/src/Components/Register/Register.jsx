@@ -11,7 +11,6 @@ const Register = () => {
   const [errorRegi, setErrorRegi] = useState('');
   const [successRegi, setSuccessRegi] = useState('');
 
-  // const naviGate = useNavigate();
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -30,9 +29,7 @@ const Register = () => {
 
     e.preventDefault();
     const email = e.target.email.value;
-    // const confirm_email = e.target.confirm_email.value;
     const password = e.target.password.value;
-    // const confirm_password = e.target.confirm_password.value;
     const name = e.target.name.value;
 
     console.log(email, name, password);
@@ -54,7 +51,6 @@ const Register = () => {
 
     registerUser(email, password)
       .then(result => {
-        // naviGate('/');
         console.log(result);
         setSuccessRegi('user created successfully');
       })
@@ -101,20 +97,7 @@ const Register = () => {
                   name="email"
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-white font-bold">
-                    Confirm Email
-                  </span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Confirm Your Email"
-                  className="input input-bordered"
-                  required
-                  name="confirm_email"
-                />
-              </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">
@@ -130,18 +113,6 @@ const Register = () => {
                 />
               </div>
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-white font-bold">
-                    Confirm Password
-                  </span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="Confirm Your Password"
-                  className="input input-bordered"
-                  required
-                  name="confirm_password"
-                />
                 <label className="label">
                   <a
                     href="#"

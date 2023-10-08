@@ -40,8 +40,8 @@ const Login = () => {
 
   return (
     <>
-      <div className="hero min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero  min-h-screen">
+        <div className="hero-content  flex-col lg:flex-row-reverse">
           <div className="text-center items-center lg:text-left">
             <h1 className="text-5xl w-full text-white font-bold">Login now!</h1>
             <img
@@ -50,7 +50,7 @@ const Login = () => {
               alt=""
             />
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent bg-slate-700 bg-opacity-60">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  bg-slate-700 bg-opacity-60">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
