@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { GiEnergyArrow } from 'react-icons/gi';
@@ -8,11 +8,12 @@ import Button from '../Button/Button';
 const Login = () => {
   const { signInUser, googleSignIn } = useContext(AuthContext);
   const naviGate = useNavigate();
+  const location = useLocation();
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
-        naviGate('/');
+        naviGate(location?.state ? location.state : '/');
         console.log(result.user);
       })
       .catch(error => {
@@ -29,7 +30,7 @@ const Login = () => {
 
     signInUser(email, password)
       .then(result => {
-        naviGate('/');
+        naviGate(location?.state ? location.state : '/');
         console.log(result);
       })
       .catch(error => {
