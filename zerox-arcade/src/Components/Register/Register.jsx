@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
@@ -12,6 +12,7 @@ const Register = () => {
   const { registerUser, googleSignIn } = useContext(AuthContext);
   const [errorRegi, setErrorRegi] = useState('');
   const [successRegi, setSuccessRegi] = useState('');
+  const naviGate = useNavigate();
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -29,6 +30,7 @@ const Register = () => {
     no-repeat
   `,
         });
+        naviGate('/login');
         console.log(result.user);
       })
       .catch(error => {
@@ -117,6 +119,7 @@ const Register = () => {
     no-repeat
   `,
         });
+        naviGate('/login');
         setSuccessRegi();
       })
       .catch(error => {

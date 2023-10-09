@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { GiEnergyArrow } from 'react-icons/gi';
@@ -11,6 +11,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const { signInUser, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState(null);
+  const naviGate = useNavigate();
+  const location = useLocation();
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -29,6 +31,7 @@ const Login = () => {
   `,
         });
         console.log(result.user);
+        naviGate(location?.state ? location.state : '/');
       })
       .catch(error => {
         console.error(error);
@@ -59,6 +62,7 @@ const Login = () => {
     no-repeat
   `,
         });
+        naviGate(location?.state ? location.state : '/');
       })
       .catch(error => {
         console.error(error);
