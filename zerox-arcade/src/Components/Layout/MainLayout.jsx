@@ -11,10 +11,12 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="max-w-[425px] md:max-w-[768px] space-y-10 lg:max-w-[1400px] mx-auto">
-      <div style={background}>
-        <Navbar></Navbar>
-        <Outlet></Outlet>
+    <div style={background}>
+      <div className="max-w-[425px] md:max-w-[768px] space-y-10 lg:max-w-[1400px] mx-auto">
+        <div>
+          <Navbar></Navbar>
+          <Outlet></Outlet>
+        </div>
       </div>
     </div>
   );
