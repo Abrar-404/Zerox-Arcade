@@ -77,7 +77,9 @@ const Navbar = () => {
               {navs}
             </ul>
           </div>
-          <img className="max-w-[150px] max-h-[80px]" src={img} alt="" />
+          <Link to="/">
+            <img className="max-w-[150px] max-h-[80px]" src={img} alt="" />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navs}</ul>
